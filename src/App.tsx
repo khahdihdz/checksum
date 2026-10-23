@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { AlertCircle, Moon, ShieldCheck, Sun, UploadCloud } from 'lucide-react';
 import { Dropzone } from './components/Dropzone';
 import { ExpectedInput } from './components/ExpectedInput';
+import { Features } from './components/Features';
 import { FileRow } from './components/FileRow';
 import { Toast } from './components/Toast';
 import { Toolbar } from './components/Toolbar';
@@ -359,6 +360,8 @@ export default function App() {
 
       <main className="app-main">
         <Dropzone onFiles={addFiles} compact={items.length > 0} />
+
+        {items.length === 0 && <Features />}
 
         <Toolbar
           algorithm={algorithm}
